@@ -91,8 +91,9 @@ function processLastItem(stringList, callback) {
 */
 function processSum(numberList, callback) {
   /* CODE HERE */
-
-
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  return callback(numberList.reduce(reducer));
+}
 /**
  * ### Challenge `processProduct`
  * 
