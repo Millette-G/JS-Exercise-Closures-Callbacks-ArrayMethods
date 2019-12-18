@@ -91,8 +91,10 @@ function processLastItem(stringList, callback) {
 */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
-  return callback(numberList.reduce(reducer));
+  return callback(numberList.reduce(myFunc));
+}
+function myFunc(total, num) {
+  return total + num;
 }
 /**
  * ### Challenge `processProduct`
@@ -137,8 +139,13 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
+  if (callback(list.map === item)) {
+    return true;
+  } 
+  return false;
+  
 }
 
 /**
