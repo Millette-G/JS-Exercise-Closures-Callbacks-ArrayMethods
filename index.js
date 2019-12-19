@@ -91,11 +91,13 @@ function processLastItem(stringList, callback) {
 */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  return callback(numberList.reduce(myFunc));
-}
-function myFunc(total, num) {
-  return total + num;
-}
+   let sum = 0;
+   for(let i = 0; i <numberList.length; i++){
+     sum += numberList[i]
+   }
+   return callback(sum);
+ }
+
 /**
  * ### Challenge `processProduct`
  * 
@@ -141,11 +143,7 @@ function processProduct(num1, num2, callback) {
 */
 function processContains(item, list, callback) {
   /* CODE HERE */
-  if (callback(list.map === item)) {
-    return true;
-  } 
-  return false;
-  
+ return(list.includes(item))
 }
 
 /**
@@ -189,8 +187,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  const runnerNames = []
+  runners.forEach(item => {
+    runnerNames.push(`${item.last_name}, ${item.first_name}`)
+  })
+  return runnerNames
 }
 
 /**
